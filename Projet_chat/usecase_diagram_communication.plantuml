@@ -1,0 +1,30 @@
+@startuml
+skinparam Style strictuml
+'=============Actor=======================
+actor User as usr
+actor Other_user as ousr
+'========================================
+rectangle "Package Connexion"{
+    left to right direction
+'===================Use cases===================
+usecase "Envoyer un message " as UC1
+usecase "Receptionner un message" as UC2
+usecase "Sélectionner un destinataire" as UC1A
+usecase "Enregistrer le message" as UC2A
+usecase "Afficher le message " as UC2B
+   
+ '============================================
+}
+
+'=====================Association UC1===============
+usr ---> UC1 
+UC1 ---> ousr
+UC1 .> UC1A : <Include>
+'===================================================
+'=====================Association UC2===============
+usr --> UC2
+UC2 .> UC2A : <Include>
+UC2 ..> UC2B : <Include>
+'===================================================
+
+@enduml

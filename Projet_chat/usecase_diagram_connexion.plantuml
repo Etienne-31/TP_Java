@@ -1,0 +1,34 @@
+@startuml
+skinparam Style strictuml
+'=============Actor=======================
+actor User as usr
+actor Other_user as ousr
+'========================================
+rectangle "Package Connexion"{
+
+    left to right direction
+'===================Use cases===================
+    usecase "S'inscrire sur le système" as UC1
+    usecase "Se connecter au système" as UC2
+    usecase "Choisir Login" as UC1A
+    usecase "Choisir mot de passe " as UC1B
+    usecase "Construire Annuaire" as UC2A
+    usecase "Notfier de la présence sur le système" as UC2B
+    usecase "Editer Pseudo " as UC2C
+ '============================================
+}
+
+'=====================Association UC1===============
+usr --->UC1
+UC1 ..> UC1A : <Include>
+UC1 ..> UC1B : <Include>
+UC1 --> UC2
+'===================================================
+'=====================Association UC2===============
+usr ---> UC2
+UC2 ..> UC2A : <Include>
+UC2 ..> UC2B : <Include>
+UC2 ..> UC2C : <Include>
+UC2B ---> ousr
+'===================================================
+@enduml

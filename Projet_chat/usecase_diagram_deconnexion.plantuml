@@ -1,0 +1,26 @@
+@startuml
+skinparam Style strictuml
+'=============Actor=======================
+actor User as usr
+actor Other_user as ousr
+'========================================
+rectangle "Package Deconnexion"{
+    left to right direction
+'===================Use cases===================
+usecase "Deconnexion du système " as UC1
+usecase "Notifier les différents agents" as UC1A
+usecase "Quitter le système" as UC1B
+
+   
+ '============================================
+}
+
+'=====================Association UC1===============
+usr ---> UC1 
+UC1A ---> ousr
+UC1 .> UC1A : <Include>
+UC1 ..> UC1B : <Include>
+'===================================================
+
+
+@enduml
