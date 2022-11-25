@@ -1,4 +1,4 @@
-package fr.insa.projet.clavardage.applicationClavardage;
+package fr.insa.projet.clavardage.models;
 
 import java.net.*;
 import java.io.*;
