@@ -1,3 +1,6 @@
 fr\insa\projet\clavardage\applicationClavardage\App.class
+fr\insa\projet\clavardage\models\Message.class
+fr\insa\projet\clavardage\models\TestTCP.class
 fr\insa\projet\clavardage\controlers\NetworkManager.class
+fr\insa\projet\clavardage\models\testMessage.class
 fr\insa\projet\clavardage\models\Utilisateur.class

@@ -11,13 +11,20 @@ public class Utilisateur {
 	public String userPseudo;
 	private InetAddress ipUser;
 	
-	public Utilisateur(){}
+	public Utilisateur(String idOtherUser,String pseudoOtherUser){
+		this.password = null;
+		this.ipUser = null;
+		this.idUser = idOtherUser;
+		this.userPseudo = pseudoOtherUser;
+
+	}
 	
 	public Utilisateur(String idUser,String password,String pseudo){
 		
 		try {
 			this.idUser = idUser;
 			this.password = password;
+			this.userPseudo = pseudo;
 			this.ipUser = InetAddress.getLocalHost();	
 		}
 		catch(UnknownHostException e){

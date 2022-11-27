@@ -29,10 +29,10 @@ public class NetworkManager {
 
     }
 
-    public Message receiveMessage(BufferedReader is, Utilisateur sender,Utilisateur receiver,LocalDateTime timestanp) throws  IOException{
+    public Message receiveMessage(BufferedReader is, Utilisateur sender,Utilisateur receiver) throws  IOException{
         Message receivedMessage;
         String data = listening(is);
-        receivedMessage = new Message(sender,receiver,LocalDateTime.now(),data);
+        receivedMessage = new Message(sender,receiver,data);
         return receivedMessage;
     }
 
@@ -95,7 +95,7 @@ public class NetworkManager {
         return os;
     }
 
-    public void close_connexion(BufferedWriter os,BufferedWriter is) throws IOException {
+    public void close_connexion(BufferedWriter os,BufferedReader is) throws IOException {
 
         try{
             if(is != null){

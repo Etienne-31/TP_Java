@@ -7,10 +7,10 @@ public class Message {
     private String Data;
 
     public Message(){}
-    public Message(Utilisateur idSender, Utilisateur idReceiver,LocalDateTime timestamp,String Data){
+    public Message(Utilisateur idSender, Utilisateur idReceiver,String Data){
         this.idSender = idSender.getIdUser();
         this.idReceiver = idReceiver.getIdUser();
-        this.timestamp = timestamp;
+        this.timestamp = LocalDateTime.now();
         this.Data = Data;
     }
     public String getidSender(){
@@ -24,6 +24,11 @@ public class Message {
     }
     public String getData(){
         return this.Data;
+    }
+
+    public String toString(){
+        return "Message recu / Id sender :"+getidSender()+" / Id receiver :"+getidReceiver()+" / Timestamp : "+gettimestamp()+" \n"+" Message : "+getData();
+
     }
 
 
