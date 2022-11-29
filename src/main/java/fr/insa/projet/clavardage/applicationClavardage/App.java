@@ -10,7 +10,7 @@ import fr.insa.projet.clavardage.models.TestTCP;
 import fr.insa.projet.clavardage.models.Utilisateur;
 public class App {
   public static void main(String[] args) {
-    Scanner scan = new Scanner(System.in);
+   /*  Scanner scan = new Scanner(System.in);
 
     String id_User;
     String password = "123";
@@ -27,7 +27,7 @@ public class App {
 
     TestTCP conv;
 
-    System.out.println("V10");
+    System.out.println("V11");
     System.out.println("Quelle est votre idUser ?");
     id_User = scan.nextLine();
 
@@ -68,19 +68,49 @@ public class App {
     }
 
     conv = new TestTCP(user, Otheruser, mode, port, adress);
-    System.out.println("On lance l app");
-    conv.run2();
-
-
     
-    
+    conv.run2();*/
+    App app = new App();
+
+    App.Thread1 thread = app.new Thread1();
+    thread.run();
+   
+    try {
+      thread.join();
+      System.out.println("Thread join-------------------------");
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+
+    for(int i =0;i<10;i++){
+      System.out.println("i m the MAIN thread  ");
+    }   
     
     
     
     
   }
-  
+  class Thread1 extends Thread {
 
+    public Thread1(){}
+
+    
+    public void run() {
+      for(int i =0;i<10;i++){
+        System.out.println("i m the thread 1 ");
+      }   
+    }
+  }
+  
+  class Thread2 extends Thread {
+    public void run() {
+      for(int i =0;i<10;i++){
+        System.out.println("i m the thread 2 ");
+      }   
+    }
+  }
+  
+  
 
 }
 

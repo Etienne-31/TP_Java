@@ -80,14 +80,24 @@ public class TestTCP {
             this.networkManagement.send("Echo client", this.os);
             Message message = new Message(this.user, this.other_user, "Echo client");
             System.out.println(message.toString());
-            receiveMessage();
+            Message recu = null;
+            try {
+                while((recu = receiveMessage()) != null );
+                
+            } catch (NullPointerException e) {
+                
+            }
+           
+
 
         }
         else{
             System.out.println("Vous êtes le Serveur");
-            this.networkManagement.send("Echo Serveur", this.os);
-            Message message = new Message(this.user, this.other_user, "Echo Serveur");
-            System.out.println(message.toString());
+           /*  this.networkManagement.send("Echo Serveur1", this.os);
+            this.networkManagement.send("Echo Serveur2", this.os);
+            this.networkManagement.send("Echo Serveur3", this.os);
+            this.networkManagement.send("Echo Serveur4", this.os);
+            this.networkManagement.send("Echo Serveur5", this.os);*/
             receiveMessage();
 
         }
@@ -99,13 +109,17 @@ public class TestTCP {
         }
     }
 
-    private void receiveMessage(){
+    private Message receiveMessage(){
+        Message message = null;
         try {
-            Message message = this.networkManagement.receiveMessage(this.is, this.other_user, this.user);
-            System.out.println(message.toString());
+            message = this.networkManagement.receiveMessage(this.is, this.other_user, this.user);
+            if(message != null){
+                System.out.println(message.toString());
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return message;
     }
 
     private String sendMessage(){

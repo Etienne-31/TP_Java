@@ -30,9 +30,11 @@ public class NetworkManager {
     }
 
     public Message receiveMessage(BufferedReader is, Utilisateur sender,Utilisateur receiver) throws  IOException{
-        Message receivedMessage;
+        Message receivedMessage = null;
         String data = listening(is);
-        receivedMessage = new Message(sender,receiver,data);
+        if(data != null){
+            receivedMessage = new Message(sender,receiver,data);
+        }
         return receivedMessage;
     }
 
@@ -144,5 +146,9 @@ public class NetworkManager {
         }
         System.out.println("init_socketClientTCP : Connexion etabli avec :" + serveurHost + " au port : " + port);
         return socketOfClient;
+    }
+
+    public synchronized void printMessage(Message message){
+        message.toString();
     }
 }
