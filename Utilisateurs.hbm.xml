@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping>
+<hibernate-mapping>
+    <class name="Utilisateur" table="Utilisateurs">
+        <id name="idUser" type="String" column="idUser">
+            <generator class="Native"/>
+        </id>
+        <property name="password" type="String" not-null="true">
+    </class>
+</hibernate-mapping>
