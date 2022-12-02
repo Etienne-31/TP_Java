@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping>
+<hibernate-mapping>
+    <class name="Message" table="Messages">
+        <id name="idSender" type="String" column="idSender">
+            <generator class="Native"/>
+        </id>
+        <property name="idReceiver" type="String" not-null="true">
+        <property name="timestamp" type="LocalDateTime" not-null="true">
+        <property name="data" type="String" not-null="true">
+    </class>
+</hibernate-mapping>

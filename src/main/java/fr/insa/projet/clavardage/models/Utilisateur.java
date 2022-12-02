@@ -11,9 +11,9 @@ public class Utilisateur {
 	public String userPseudo;
 	private InetAddress ipUser;
 	
-	public Utilisateur(String idOtherUser,String pseudoOtherUser){
+	public Utilisateur(String idOtherUser,String pseudoOtherUser)throws UnknownHostException{
 		this.password = null;
-		this.ipUser = null;
+		this.ipUser = InetAddress.getLocalHost();
 		this.idUser = idOtherUser;
 		this.userPseudo = pseudoOtherUser;
 
