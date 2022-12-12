@@ -148,6 +148,10 @@ public class NetworkManager {
         return socketOfClient;
     }
 
+    ///////////////////////////////Fais partie UDP ici //////////////////////
+
+    ///////////////////////////////////////////////////////////////////////////
+
     public synchronized void printMessage(Message message){
         message.toString();
     }
